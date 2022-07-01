@@ -1,0 +1,86 @@
+////////////////
+
+// query allUsers{
+//   users{
+//     id
+//     name
+//     phone
+//   }
+// }
+/////////////////////
+
+
+// query getAllQuotes{
+//   quotes{
+//     name
+//     by
+//   }
+// }
+
+
+////////////////////////////////////
+
+// query allUsersWithQuotes{
+//   users{
+//     id
+//     name
+//     phone
+//     quotes{
+//       name
+//       by
+//     }
+//   }
+// }
+
+/////////////////////////////////
+
+// query getUserByID{
+//   user(id:"1"){
+//     name
+//     username
+//     email
+//     phone
+//   }
+// }
+
+////////////////////////////////////
+
+query getQuotesByID{
+iquote(by:4){
+  name
+  by
+}}
+
+///////////////////////////////
+
+dynamic get user by ID
+query getUserByID($userId:ID){
+user(id:$userId){
+  name
+  username
+  email
+  phone
+}
+}
+
+///////////////////////////////////////
+
+dynamic Quotes by id
+
+query getQuotesByID($quotesId:ID!){
+iquote(by:$quotesId){
+  name
+  by
+}
+}
+
+//////////////////Create userrr////////////
+
+mutation createUser($userNew:UserInput!) {
+  user:createUserDummy(userNew:$userNew){
+    id
+    name
+    username
+    phone
+  }
+}
